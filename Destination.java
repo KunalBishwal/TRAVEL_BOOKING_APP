@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package travel.management.system;
 
 import javax.swing.*;
@@ -49,7 +45,7 @@ public class Destination extends JFrame implements Runnable {
             l11.setVisible(true);
             Thread.sleep(2800);
             l11.setVisible(false);
-            
+
             this.setVisible(false);
         } catch (Exception e) {
             System.out.println(e);
@@ -61,11 +57,11 @@ public class Destination extends JFrame implements Runnable {
 
         setBounds(580, 220, 900, 700);
         getContentPane().setBackground(new Color(220, 250, 250));
-        
+
         th = new Thread(this);
 
-        
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("travel/management/system/icons/dest1.jpeg"));
+
+        ImageIcon i1 = new ImageIcon(getClass().getResource("/resources/dest1.jpeg"));
         Image i2 = i1.getImage().getScaledInstance(900, 700, Image.SCALE_DEFAULT);
         ImageIcon i3 = new ImageIcon(i2);
         l2 = new JLabel(i3);
@@ -74,7 +70,7 @@ public class Destination extends JFrame implements Runnable {
 
         setLayout(null);
 
-        ImageIcon i4 = new ImageIcon(ClassLoader.getSystemResource("travel/management/system/icons/dest2.png"));
+        ImageIcon i4 = new ImageIcon(getClass().getResource("/resources/dest2.png"));
         Image i5 = i4.getImage().getScaledInstance(900, 700, Image.SCALE_DEFAULT);
         ImageIcon i6 = new ImageIcon(i5);
         l3 = new JLabel(i4);
@@ -82,7 +78,7 @@ public class Destination extends JFrame implements Runnable {
         add(l3);
         l3.setVisible(false);
 
-        ImageIcon i7 = new ImageIcon(ClassLoader.getSystemResource("travel/management/system/icons/dest3.jpg"));
+        ImageIcon i7 = new ImageIcon(getClass().getResource("/resources/dest3.jpg"));
         Image i8 = i7.getImage().getScaledInstance(900, 700, Image.SCALE_DEFAULT);
         ImageIcon i9 = new ImageIcon(i8);
         l4 = new JLabel(i9);
@@ -90,7 +86,7 @@ public class Destination extends JFrame implements Runnable {
         add(l4);
         l4.setVisible(false);
 
-        ImageIcon i10 = new ImageIcon(ClassLoader.getSystemResource("travel/management/system/icons/dest4.jpg"));
+        ImageIcon i10 = new ImageIcon(getClass().getResource("/resources/dest4.jpg"));
         Image i11 = i10.getImage().getScaledInstance(900, 700, Image.SCALE_DEFAULT);
         ImageIcon i12 = new ImageIcon(i11);
         l5 = new JLabel(i12);
@@ -98,7 +94,7 @@ public class Destination extends JFrame implements Runnable {
         add(l5);
         l5.setVisible(false);
 
-        ImageIcon i13 = new ImageIcon(ClassLoader.getSystemResource("travel/management/system/icons/dest5.jpg"));
+        ImageIcon i13 = new ImageIcon(getClass().getResource("/resources/dest5.jpg"));
         Image i14 = i13.getImage().getScaledInstance(900, 700, Image.SCALE_DEFAULT);
         ImageIcon i15 = new ImageIcon(i14);
         l6 = new JLabel(i15);
@@ -106,7 +102,7 @@ public class Destination extends JFrame implements Runnable {
         add(l6);
         l6.setVisible(false);
 
-        ImageIcon i16 = new ImageIcon(ClassLoader.getSystemResource("travel/management/system/icons/dest6.jpg"));
+        ImageIcon i16 = new ImageIcon(getClass().getResource("/resources/dest6.jpg"));
         Image i17 = i16.getImage().getScaledInstance(900, 700, Image.SCALE_DEFAULT);
         ImageIcon i18 = new ImageIcon(i17);
         l7 = new JLabel(i18);
@@ -114,7 +110,7 @@ public class Destination extends JFrame implements Runnable {
         add(l7);
         l7.setVisible(false);
 
-        ImageIcon i19 = new ImageIcon(ClassLoader.getSystemResource("travel/management/system/icons/dest7.jpeg"));
+        ImageIcon i19 = new ImageIcon(getClass().getResource("/resources/dest7.jpeg"));
         Image i20 = i19.getImage().getScaledInstance(900, 700, Image.SCALE_DEFAULT);
         ImageIcon i21 = new ImageIcon(i20);
         l8 = new JLabel(i21);
@@ -122,7 +118,7 @@ public class Destination extends JFrame implements Runnable {
         add(l8);
         l8.setVisible(false);
 
-        ImageIcon i22 = new ImageIcon(ClassLoader.getSystemResource("travel/management/system/icons/dest8.jpg"));
+        ImageIcon i22 = new ImageIcon(getClass().getResource("/resources/dest8.jpg"));
         Image i23 = i22.getImage().getScaledInstance(900, 700, Image.SCALE_DEFAULT);
         ImageIcon i24 = new ImageIcon(i23);
         l9 = new JLabel(i24);
@@ -130,7 +126,7 @@ public class Destination extends JFrame implements Runnable {
         add(l9);
         l9.setVisible(false);
 
-        ImageIcon i25 = new ImageIcon(ClassLoader.getSystemResource("travel/management/system/icons/dest9.jpg"));
+        ImageIcon i25 = new ImageIcon(getClass().getResource("/resources/dest9.jpg"));
         Image i26 = i25.getImage().getScaledInstance(900, 700, Image.SCALE_DEFAULT);
         ImageIcon i27 = new ImageIcon(i26);
         l10 = new JLabel(i27);
@@ -138,7 +134,7 @@ public class Destination extends JFrame implements Runnable {
         add(l10);
         l10.setVisible(false);
 
-        ImageIcon i28 = new ImageIcon(ClassLoader.getSystemResource("travel/management/system/icons/dest10.jpg"));
+        ImageIcon i28 = new ImageIcon(getClass().getResource("/resources/dest10.jpg"));
         Image i29 = i28.getImage().getScaledInstance(900, 700, Image.SCALE_DEFAULT);
         ImageIcon i30 = new ImageIcon(i29);
         l11 = new JLabel(i30);
