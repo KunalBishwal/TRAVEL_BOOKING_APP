@@ -1,8 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
+
 package travel.management.system;
 
 import java.awt.*;
@@ -12,7 +9,6 @@ import javax.swing.*;
 
 import java.awt.Font;
 import javax.swing.JFrame;
-import javax.swing.border.Border;
 
 public class About extends JFrame implements ActionListener {
 
@@ -52,7 +48,7 @@ public class About extends JFrame implements ActionListener {
                 + "\nFriendly Environment by providing warning messages."
                 + "\ntravelers details can be provided"
                 + "\nbooking confirmation notification"
-                ;
+        ;
 
         TextArea t1 = new TextArea(s, 10, 40, Scrollbar.VERTICAL);
         t1.setEditable(false);
@@ -78,7 +74,7 @@ public class About extends JFrame implements ActionListener {
 
         setLayout(null);
         setVisible(true);
-        
+
     }
 
     public void actionPerformed(ActionEvent e) {
