@@ -1,88 +1,102 @@
-
-
 package travel.management.system;
 
 import java.awt.*;
 import java.awt.event.*;
-
 import javax.swing.*;
-
-import java.awt.Font;
-import javax.swing.JFrame;
 
 public class About extends JFrame implements ActionListener {
 
-    JButton b1;
-    JLabel l1;
-    Font f, f1, f2;
-    TextArea t1;
-    String s;
+    JButton exitButton;
+    JLabel titleLabel;
+    TextArea infoTextArea;
+    String projectInfo;
 
     public About() {
-
+        // Set up the frame layout and properties
         setLayout(null);
-        JButton b1 = new JButton("Exit");
-        add(b1);
-        b1.setBounds(180, 430, 120, 20);
-        b1.addActionListener(this);
+        getContentPane().setBackground(new Color(60, 63, 65));  // Set background color
 
-        Font f = new Font("RALEWAY", Font.BOLD, 180);
-        setFont(f);
+        // Title label
+        titleLabel = new JLabel("About Project");
+        titleLabel.setBounds(130, 10, 300, 50);
+        titleLabel.setForeground(new Color(255, 69, 0)); // Set color for title
+        titleLabel.setFont(new Font("Serif", Font.BOLD, 30));  // Font styling
+        add(titleLabel);
 
-        s = "                                    About Projects          \n  "
-                + "\nThe objective of the Travel and Tourism Management System"
+        // Project Information
+        projectInfo = "The objective of the Travel and Tourism Management System "
                 + "project is to develop a system that automates the processes "
-                + "and activities of a travel and the purpose is to design a "
-                + "system using which one can perform all operations related to "
-                + "traveling.\n\n"
-                + "This application will help in accessing the information related "
-                + "to the travel to the particular destination with great ease. "
-                + "The users can track the information related to their tours with "
-                + "great ease through this application. The travel agency information "
-                + "can also be obtained through this application.\n\n"
-                + "Advantages of Project:"
-                + "\nGives accurate information"
-                + "\nSimplifies the manual work"
-                + "\nIt minimizes the documentation related work"
-                + "\nProvides up to date information"
-                + "\nFriendly Environment by providing warning messages."
-                + "\ntravelers details can be provided"
-                + "\nbooking confirmation notification"
-        ;
+                + "and activities related to travel management.\n\n"
+                + "This application helps users access information about "
+                + "their travel destinations, book tours with ease, and "
+                + "manage all travel-related operations seamlessly.\n\n"
+                + "Advantages of the Project:\n"
+                + "• Provides accurate and real-time information\n"
+                + "• Reduces manual work and paperwork\n"
+                + "• Streamlined booking process\n"
+                + "• Sends booking confirmations and notifications\n"
+                + "• Ensures a user-friendly environment with helpful prompts";
 
-        TextArea t1 = new TextArea(s, 10, 40, Scrollbar.VERTICAL);
-        t1.setEditable(false);
-        t1.setBounds(20, 100, 450, 300);
+        // TextArea for displaying the project info
+        infoTextArea = new TextArea(projectInfo, 10, 40, Scrollbar.VERTICAL);
+        infoTextArea.setEditable(false);
+        infoTextArea.setBounds(30, 80, 440, 300);
+        infoTextArea.setFont(new Font("SansSerif", Font.PLAIN, 16));
+        infoTextArea.setBackground(new Color(230, 230, 250));  // Light lavender background
+        infoTextArea.setForeground(Color.BLACK);  // Text color
+        add(infoTextArea);
 
-        add(t1);
+        // Exit Button with rounded borders and styling
+        exitButton = new JButton("Exit");
+        exitButton.setBounds(180, 400, 120, 40);
+        exitButton.setForeground(Color.WHITE);
+        exitButton.setBackground(new Color(255, 69, 0));  // Orange button color
+        exitButton.setFont(new Font("Arial", Font.BOLD, 18));
+        exitButton.setBorder(new RoundedBorder(20));  // Rounded borders
+        exitButton.addActionListener(this);
+        add(exitButton);
 
-        Font f1 = new Font("RALEWAY", Font.BOLD, 16);
-        t1.setFont(f1);
-
-        Container contentPane = this.getContentPane();
-        t1 = new TextArea();
-
-        JLabel l1 = new JLabel("About Project");
-        add(l1);
-        l1.setBounds(170, 10, 180, 80);
-        l1.setForeground(Color.red);
-
-        Font f2 = new Font("RALEWAY", Font.BOLD, 20);
-        l1.setFont(f2);
-
-        setBounds(700, 220, 500, 550);
-
-        setLayout(null);
+        // Frame settings
+        setBounds(600, 220, 500, 500);
+        setTitle("About Travel Management System");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
-
     }
 
+    // Rounded border class for the button
+    class RoundedBorder implements javax.swing.border.Border {
+        private int radius;
+
+        public RoundedBorder(int radius) {
+            this.radius = radius;
+        }
+
+        @Override
+        public Insets getBorderInsets(Component c) {
+            return new Insets(radius, radius, radius, radius);
+        }
+
+        @Override
+        public boolean isBorderOpaque() {
+            return true;
+        }
+
+        @Override
+        public void paintBorder(Component c, Graphics g, int x, int y, int width, int height) {
+            g.setColor(Color.WHITE);
+            g.drawRoundRect(x, y, width - 1, height - 1, radius, radius);
+        }
+    }
+
+    // Close the window when the button is clicked
+    @Override
     public void actionPerformed(ActionEvent e) {
-        dispose();
+        if (e.getSource() == exitButton) {
+            dispose();
+        }
     }
 
-    public static void main(String args[]) {
-        new About().setVisible(true);
+    public static void main(String[] args) {
+        new About();
     }
-
 }
