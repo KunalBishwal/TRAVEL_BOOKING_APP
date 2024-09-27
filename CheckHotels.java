@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package travel.management.system;
 
 import javax.swing.*;
@@ -70,7 +66,7 @@ public class CheckHotels extends JFrame implements Runnable {
             l11.add(caption);
             Thread.sleep(2800);
             l11.setVisible(false);
-            
+
             this.setVisible(false);
         } catch (Exception e) {
             System.out.println(e);
@@ -82,17 +78,17 @@ public class CheckHotels extends JFrame implements Runnable {
 
         setBounds(580, 220, 900, 700);
         getContentPane().setBackground(new Color(220, 250, 250));
-        
+
         th = new Thread(this);
-    
+
         caption = new JLabel();
         caption.setBounds(50, 550, 1000, 70);
         caption.setForeground(Color.WHITE);
         caption.setFont(new Font("Tahoma", Font.PLAIN, 40));
         add(caption);
 
-        
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("travel/management/system/icons/hotel1.jpg"));
+
+        ImageIcon i1 = new ImageIcon(getClass().getResource("/resources/hotels/jw_marriott_hotel.jpg"));
         Image i2 = i1.getImage().getScaledInstance(900, 700, Image.SCALE_DEFAULT);
         ImageIcon i3 = new ImageIcon(i2);
         l2 = new JLabel(i3);
@@ -101,7 +97,7 @@ public class CheckHotels extends JFrame implements Runnable {
 
         setLayout(null);
 
-        ImageIcon i4 = new ImageIcon(ClassLoader.getSystemResource("travel/management/system/icons/hotel2.jpg"));
+        ImageIcon i4 = new ImageIcon(getClass().getResource("/resources/hotels/mandarin_oriental_hotel.jpg"));
         Image i5 = i4.getImage().getScaledInstance(900, 700, Image.SCALE_DEFAULT);
         ImageIcon i6 = new ImageIcon(i5);
         l3 = new JLabel(i4);
@@ -109,7 +105,7 @@ public class CheckHotels extends JFrame implements Runnable {
         add(l3);
         l3.setVisible(false);
 
-        ImageIcon i7 = new ImageIcon(ClassLoader.getSystemResource("travel/management/system/icons/hotel3.jpg"));
+        ImageIcon i7 = new ImageIcon(getClass().getResource("/resources/hotels/four_seasons_hotel.jpg"));
         Image i8 = i7.getImage().getScaledInstance(900, 700, Image.SCALE_DEFAULT);
         ImageIcon i9 = new ImageIcon(i8);
         l4 = new JLabel(i9);
@@ -117,7 +113,7 @@ public class CheckHotels extends JFrame implements Runnable {
         add(l4);
         l4.setVisible(false);
 
-        ImageIcon i10 = new ImageIcon(ClassLoader.getSystemResource("travel/management/system/icons/hotel4.jpg"));
+        ImageIcon i10 = new ImageIcon(getClass().getResource("/resources/hotels/radisson_hotel.jpg"));
         Image i11 = i10.getImage().getScaledInstance(900, 700, Image.SCALE_DEFAULT);
         ImageIcon i12 = new ImageIcon(i11);
         l5 = new JLabel(i12);
@@ -125,7 +121,7 @@ public class CheckHotels extends JFrame implements Runnable {
         add(l5);
         l5.setVisible(false);
 
-        ImageIcon i13 = new ImageIcon(ClassLoader.getSystemResource("travel/management/system/icons/hotel5.jpg"));
+        ImageIcon i13 = new ImageIcon(getClass().getResource("/resources/hotels/classio_hotel.jpg"));
         Image i14 = i13.getImage().getScaledInstance(900, 700, Image.SCALE_DEFAULT);
         ImageIcon i15 = new ImageIcon(i14);
         l6 = new JLabel(i15);
@@ -133,7 +129,7 @@ public class CheckHotels extends JFrame implements Runnable {
         add(l6);
         l6.setVisible(false);
 
-        ImageIcon i16 = new ImageIcon(ClassLoader.getSystemResource("travel/management/system/icons/hotel6.jpg"));
+        ImageIcon i16 = new ImageIcon(getClass().getResource("/resources/hotels/the_bay_club_hotel.jpg"));
         Image i17 = i16.getImage().getScaledInstance(900, 700, Image.SCALE_DEFAULT);
         ImageIcon i18 = new ImageIcon(i17);
         l7 = new JLabel(i18);
@@ -141,7 +137,7 @@ public class CheckHotels extends JFrame implements Runnable {
         add(l7);
         l7.setVisible(false);
 
-        ImageIcon i19 = new ImageIcon(ClassLoader.getSystemResource("travel/management/system/icons/hotel7.jpg"));
+        ImageIcon i19 = new ImageIcon(getClass().getResource("/resources/hotels/breeze_blows_hotel.jpg"));
         Image i20 = i19.getImage().getScaledInstance(900, 700, Image.SCALE_DEFAULT);
         ImageIcon i21 = new ImageIcon(i20);
         l8 = new JLabel(i21);
@@ -149,7 +145,7 @@ public class CheckHotels extends JFrame implements Runnable {
         add(l8);
         l8.setVisible(false);
 
-        ImageIcon i22 = new ImageIcon(ClassLoader.getSystemResource("travel/management/system/icons/hotel8.jpg"));
+        ImageIcon i22 = new ImageIcon(getClass().getResource("/resources/hotels/quick_stop_hotel.jpg"));
         Image i23 = i22.getImage().getScaledInstance(900, 700, Image.SCALE_DEFAULT);
         ImageIcon i24 = new ImageIcon(i23);
         l9 = new JLabel(i24);
@@ -157,7 +153,7 @@ public class CheckHotels extends JFrame implements Runnable {
         add(l9);
         l9.setVisible(false);
 
-        ImageIcon i25 = new ImageIcon(ClassLoader.getSystemResource("travel/management/system/icons/hotel9.jpg"));
+        ImageIcon i25 = new ImageIcon(getClass().getResource("/resources/hotels/happy_mornings_motel.jpg"));
         Image i26 = i25.getImage().getScaledInstance(900, 700, Image.SCALE_DEFAULT);
         ImageIcon i27 = new ImageIcon(i26);
         l10 = new JLabel(i27);
@@ -165,7 +161,7 @@ public class CheckHotels extends JFrame implements Runnable {
         add(l10);
         l10.setVisible(false);
 
-        ImageIcon i28 = new ImageIcon(ClassLoader.getSystemResource("travel/management/system/icons/hotel10.jpg"));
+        ImageIcon i28 = new ImageIcon(getClass().getResource("/resources/hotels/moss_view_hotel.jpg"));
         Image i29 = i28.getImage().getScaledInstance(900, 700, Image.SCALE_DEFAULT);
         ImageIcon i30 = new ImageIcon(i29);
         l11 = new JLabel(i30);
