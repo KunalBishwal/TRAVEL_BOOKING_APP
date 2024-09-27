@@ -1,10 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package travel.management.system;
-
 
 import java.awt.*;
 import javax.swing.*;
@@ -13,76 +7,102 @@ import java.sql.*;
 
 public class Loading extends JFrame implements Runnable {
 
-	private JPanel contentPane;
-	private JProgressBar progressBar;
-	Connection conn;
-        String username;
-	int s;
-	Thread th;
+    private JPanel contentPane;
+    private JProgressBar progressBar;
+    Connection conn;
+    String username;
+    int s;
+    Thread th;
 
-	public static void main(String[] args) {
-            new Loading("").setVisible(true);
-	}
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> new Loading("").setVisible(true));
+    }
 
-	public void setUploading() {
-            setVisible(false);
-            th.start();
-	}
+    public void setUploading() {
+        setVisible(false);
+        th.start();
+    }
 
-	public void run() {
-            try {
-                for (int i = 0; i < 200; i++) {
-                    s = s + 1;
-                    int m = progressBar.getMaximum();
-                    int v = progressBar.getValue();
-                    if (v < m) {
-                        progressBar.setValue(progressBar.getValue() + 1);
-                    } else {
-                        i = 201;
-                        setVisible(false);
-                        new Home(username).setVisible(true);
-                    }
-                    Thread.sleep(50);
+    @Override
+    public void run() {
+        try {
+            for (int i = 0; i < 200; i++) {
+                s = s + 1;
+                int m = progressBar.getMaximum();
+                int v = progressBar.getValue();
+                if (v < m) {
+                    progressBar.setValue(progressBar.getValue() + 1);
+                } else {
+                    i = 201;
+                    setVisible(false);
+                    new Home(username).setVisible(true);
                 }
-            } catch (Exception e) {
-		e.printStackTrace();
+                Thread.sleep(50);
             }
-	}
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
-	public Loading(String username) {
-            this.username = username;
-            th = new Thread((Runnable) this);
+    public Loading(String username) {
+        this.username = username;
+        th = new Thread(this);
 
-            setBounds(600, 300, 600, 400);
-            contentPane = new JPanel();
-            contentPane.setBackground(new Color(51,204, 255));
-            setContentPane(contentPane);
-            contentPane.setLayout(null);
+        // Frame settings
+        setBounds(600, 300, 600, 400);
+        setUndecorated(true);
+        setLayout(new BorderLayout());
 
-            JLabel lbllibraryManagement = new JLabel("Travel and Toursim Application");
-            lbllibraryManagement.setForeground(new Color(72, 209, 204));
-            lbllibraryManagement.setFont(new Font("Trebuchet MS", Font.BOLD, 35));
-            lbllibraryManagement.setBounds(50, 46, 700, 35);
-            contentPane.add(lbllibraryManagement);
-	
-            progressBar = new JProgressBar();
-            progressBar.setFont(new Font("Tahoma", Font.BOLD, 12));
-            progressBar.setStringPainted(true);
-            progressBar.setBounds(130, 135, 300, 25);
-            contentPane.add(progressBar);
+        // Custom rounded panel
+        contentPane = new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+                ImageIcon backgroundIcon = new ImageIcon(getClass().getResource("/resources/loading_background.jpg"));
+                Image backgroundImage = backgroundIcon.getImage();
+                g.drawImage(backgroundImage, 0, 0, getWidth(), getHeight(), this);
+            }
+        };
+        contentPane.setLayout(null);
+        add(contentPane, BorderLayout.CENTER);
 
-            JLabel lblNewLabel_2 = new JLabel("Please Wait....");
-            lblNewLabel_2.setFont(new Font("Yu Gothic UI Semibold", Font.BOLD, 20));
-            lblNewLabel_2.setForeground(new Color(160, 82, 45));
-            lblNewLabel_2.setBounds(200, 165, 150, 20);
-            contentPane.add(lblNewLabel_2);
+        // Create a rounded border for the panel
+        contentPane.setBorder(BorderFactory.createLineBorder(new Color(255, 255, 255), 3, true)); // Rounded border
 
-            JPanel panel = new JPanel();
-            panel.setBackground(Color.WHITE);
-            panel.setBounds(10, 10, 580, 380);
-            contentPane.add(panel);
-              
-            setUndecorated(true);
-            setUploading();
-	}
+        // Title Label with rounded border and custom font
+        JLabel titleLabel = new JLabel("Travel and Tourism Application");
+        titleLabel.setForeground(Color.WHITE);
+        titleLabel.setFont(new Font("Montserrat", Font.BOLD, 30));
+        titleLabel.setBounds(50, 30, 500, 35);
+        titleLabel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); // Padding inside label
+        contentPane.add(titleLabel);
+
+        // Progress Bar with curved edges
+        progressBar = new JProgressBar();
+        progressBar.setFont(new Font("Roboto", Font.BOLD, 14));
+        progressBar.setStringPainted(true);
+        progressBar.setBounds(130, 150, 340, 30);
+        progressBar.setBackground(new Color(255, 255, 255, 80)); // Translucent background
+        progressBar.setForeground(new Color(72, 209, 204)); // Custom progress color
+
+        // Use a rounded border for the progress bar
+        progressBar.setBorder(BorderFactory.createLineBorder(Color.WHITE, 2, true)); // Rounded border
+        contentPane.add(progressBar);
+
+        // Loading Label with rounded border
+        JLabel loadingLabel = new JLabel("Please Wait...");
+        loadingLabel.setFont(new Font("Yu Gothic UI Semibold", Font.BOLD, 18));
+        loadingLabel.setForeground(Color.WHITE);
+        loadingLabel.setBounds(240, 200, 150, 30);
+        loadingLabel.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10)); // Padding inside label
+        contentPane.add(loadingLabel);
+
+        // Panel to provide some margin from the edges
+        JPanel marginPanel = new JPanel();
+        marginPanel.setBounds(10, 10, 580, 380);
+        marginPanel.setOpaque(false);
+        contentPane.add(marginPanel);
+
+        setUploading();
+    }
 }
