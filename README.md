@@ -75,22 +75,17 @@ This system simplifies the end-to-end travel management process, including booki
 Below are some screenshots showcasing different parts of the application:
 
 ### 1. Login Screen
-<img src="screenshots/login_screen.png" alt="Login Screen" width="500"/>
-
+<img src="screenshots/login_screen.png" alt="Login Screen" width="450"/> 
 ### 2. Home Screen
-<img src="screenshots/home_screen.png" alt="Home Screen" width="500"/>
-
+<img src="screenshots/home_screen.png" alt="Home Screen" width="450"/>
 ### 3. Loading Screen
-<img src="screenshots/loading_screen.png" alt="Loading Screen" width="500"/>
-
+<img src="screenshots/loading_screen.png" alt="Loading Screen" width="450"/>
 ### 4. Splash Screen
-<img src="screenshots/splash_screen.png" alt="Splash Screen" width="500"/>
-
+<img src="screenshots/splash_screen.png" alt="Splash Screen" width="450"/>
 ### 5. Forgot Password Screen
-<img src="screenshots/forgot_password.png" alt="Forgot Password Screen" width="500"/>
-
+<img src="screenshots/forgot_password.png" alt="Forgot Password Screen" width="450"/>
 ### 6. SignUp Screen
-<img src="screenshots/signup_screen.png" alt="Signup Screen" width="500"/>
+<img src="screenshots/signup_screen.png" alt="Signup Screen" width="450"/>
 
 
 > **Note**: Place your screenshots in a folder named `screenshots` within the project directory and ensure that the paths in this `README.md` file match the folder structure.
