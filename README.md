@@ -14,7 +14,8 @@ The **Travel and Tourism Management System** is a Java-based desktop application
    - [Admin Management](#admin-management)
 3. [System Requirements](#system-requirements)
 4. [Setup Instructions](#setup-instructions)
-5. [License](#license)
+5. [Screenshots](#screenshots)
+6. [License](#license)
 
 ## Overview
 This system simplifies the end-to-end travel management process, including booking, payment, and customer management. Built with Apache NetBeans IDE, it employs a layered architecture with distinct Presentation, Business Logic, and Data layers for seamless integration and maintenance.
@@ -69,6 +70,30 @@ This system simplifies the end-to-end travel management process, including booki
 4. **Run the Application**
    - Open the project in Apache NetBeans and build the project.
    - Run the application, ensuring all paths, API keys, and database connections are set correctly.
+
+## Screenshots
+Below are some screenshots showcasing different parts of the application:
+
+### 1. Login Screen
+![Login Screen](screenshots/login_screen.png)
+
+### 2. Booking Dashboard
+![Booking Dashboard](screenshots/home_screen.png)
+
+### 3. Loading Screen
+![Payment Gateway](screenshots/loading_screen.png)
+
+### 4. Splash Screen
+![Customer Management](screenshots/splash_screen.png)
+
+### 5. Forgot Password Screen
+![Customer Management](screenshots/forgot_password.png)
+
+### 6. SignUp Screen
+![Booking Dashboard](screenshots/signup_screen.png)
+
+
+> **Note**: Place your screenshots in a folder named `screenshots` within the project directory and ensure that the paths in this `README.md` file match the folder structure.
 
 ## License
 This project is open for educational and personal use. For details, please refer to the LICENSE file.
